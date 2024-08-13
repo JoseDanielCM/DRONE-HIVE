@@ -1,0 +1,68 @@
+/* ---------------------FOOTER---------------------- */
+
+footer {
+    width: 100vw;
+    background-color: #1c1a2e;
+}
+
+footer > section > img[alt="logo-pagina"] {
+    width: 15vw;
+}
+
+footer > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+
+#REDES-SOCIALES {
+    padding-top: 0px;
+    margin-top: 10px;
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+section[id="REDES-SOCIALES"] > div >img {
+    width: 5vw;
+}
+
+footer > section >h3 {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+
+
+footer > section[id="DIRECCION"] > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+footer > section[id="DIRECCION"] > div > h3,p{
+    margin: 5px;  
+    font-size: 3vw;
+}
+
+footer > section >h2 {
+    margin: 0;
+    font-size: 8vw;
+}
+
+footer > section[id="POLITICAS"] {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 3vw;
+}
+
+footer > section[id="POLITICAS"] > a {
+    color: rgb(198, 2, 212);
+    text-decoration: none;
+}
+
+/* CSS PARA VERSION NO COMPATIBLE */

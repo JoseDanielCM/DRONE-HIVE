@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRONE</title>
+    <link rel="stylesheet" href="nav-bar.css" />
+    <link rel="stylesheet" href="dron_styles.css" />
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="nav-item nav-item-inicio">
+            <a class="nav-item-enlace" href="index.html">
+                <img id="logo-dron" src="IMAGENES-NAV/LOGO.png" alt="Logo" />
+            </a>
+        </div>
+
+        <div class="nav-item nav-item-carrito">
+            <a class="nav-item-enlace" href="carrito.html">
+                <img id="logo-carro" src="IMAGENES-NAV/CARRITO.png" alt="carrito" />
+            </a>
+        </div>
+        <div class="nav-item nav-item-usuario">
+            <a class="nav-item-enlace" href="login.html">
+                <img id="logo-user" src="IMAGENES-NAV/USUARIO.png" alt="user" />
+            </a>
+        </div>
+    </nav>
+
+    <section id="section-imagen-fondo">
+        <div id="contenedor-datos">
+            <div id="contenedor_imagen">
+                <img id="imagen-dron" src="../IMG-PRODUCTOS/dron-carrera-1.png" alt="dron-carrera-1" />
+            </div>
+            
+            <section id="detalles-producto">
+                <article id="nombre">
+                    <h2>DRONE 4DRC M1</h2>
+                </article>
+
+                <article id="cantidad">
+                    <div id="select-cantidad">
+                        <button id="quitar-cant" style="font-size: 8vw; line-height: 0px">-</button>
+                        <span id="valor-cantidad">2</span>
+                        <button style="font-weight: bold;" id="agregar-cant">+</button>
+                    </div>
+                </article>
+
+                <article id="estrellas">
+                    <button valor="1" class="star">⋆</button>
+                    <button valor="2" class="star">⋆</button>
+                    <button valor="3" class="star">⋆</button>
+                    <button valor="4" class="star">⋆</button>
+                    <button valor="5" class="star">⋆</button>
+                </article>
+
+                <article id="categoria">
+                    <div>
+                        <p><strong>CATEGORÍA:</strong></p>
+                        <p>CARRERA</p>
+                    </div>
+                </article>
+
+                <article id="descripcion">
+                    <p id="TXT-DESCRIPCION"><strong>DESCRIPCIÓN</strong></p>
+                    <p><strong>Alcance:</strong> 1500m con radiocontrol</p>
+                    <p>800m con aplicacion wifi</p>
+                    <p><strong>Tiempo:</strong> 50min por cada batería</p>
+                    <p><strong>Velocidad:</strong> 160km/h</p>
+                </article>
+
+                <article id="precio">
+                    <h5>Precio total</h5>
+                    <p>1.300.000</p>
+                </article>
+
+                <article id="carrito">
+                    <a href="../carrito.html">
+                        <div id="carrito-boton">
+                            <div id="carrito-boton-imagen">
+                                <img src="../IMAGENES-NAV/CARRITO.png" alt="Icono agregar carrito" />
+                            </div>
+                            <div id="carrito-boton-texto">Agregar al carrito</div>
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </div>
+    </section>
+</body>
+<script src="valores.js"></script>
+</html>

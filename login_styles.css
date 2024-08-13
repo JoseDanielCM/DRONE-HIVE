@@ -1,0 +1,108 @@
+.pag-movil{
+    background-color: transparent;
+    height: 100vh;
+}
+
+body {
+    background-image: url(IMAGENES-NAV/FONDO-LOG.jpg);
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+main {
+    box-sizing: border-box;
+    background-color: #0b09197f;
+    border: 2px solid #a34ebbae;
+    width: 80vw;
+    min-height: 270px;
+    height: 33vh;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+}
+
+h1 {
+    text-align: center;
+    color: #b770d1;
+    margin: 30px 0 1px;
+}
+
+hr {
+    width: 10vw;
+    margin:0px 0 10px ;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #0b091941;
+    border: 1px solid rgb(198, 96, 216);
+    color: white;
+}
+
+input::placeholder {
+    color: #ededed;
+}
+
+input[type="submit"] {
+    width: 30%;
+    height: 1.6em;
+    margin: 0;
+    color:#ededed;
+    background-color: #cca9dd;
+    border: none;
+}
+
+
+#separador{
+    margin: 10px 0 10px;
+    color: #ededed;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+/* LOGIN CON GOOGLE */
+
+#login-google {
+    width: 50%;
+    height: 20px;
+    background-color: #0b09197f;
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    grid-template-rows: 20px;
+    text-decoration: none;
+}
+
+#icono-de-google {
+    grid-column: 1;
+    width: 12px;
+}
+
+#contenedor-texto,#contenedor-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Texto-login-google {
+    color: #ededed;
+    grid-column: 2;
+    margin: 0;
+    font-size: 0.7em;
+    text-decoration: none;
+}
+
+/* CSS PARA VERSION NO COMPATIBLE */
