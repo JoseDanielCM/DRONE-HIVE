@@ -1,0 +1,78 @@
+body {
+    background-color: #0B0919;
+    color: #efefef;
+}
+
+#nav {
+    background-color: #312e44f8;
+    width: 100%;
+    min-height: 50px;
+    height: 5vh;
+    border-radius: 0 0 5px 5px;
+    display: grid;
+    position: fixed;
+    top: 0;
+    left: 0;
+    grid-template-columns: minmax(50px,10vw) auto minmax(50px,10vw) minmax(50px,10vw);
+    grid-template-rows: minmax(50px,5vh);
+}
+
+/* BARRA DE NAVEGACION */
+.nav-item {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7em;
+}
+
+.nav-item:hover {
+    background-color: #454360;
+    border-radius: 2px 5px 5px 5px;
+}
+
+
+.nav-item-inicio {
+    grid-column: 1;
+    border-radius: 2px 5px 5px 5px;
+}
+.nav-item-carrito { 
+    grid-column: 3;
+}
+.nav-item-usuario {
+    grid-column: 4;
+}
+
+/* LOGOS */
+#logo-dron {
+    width: 100%;
+    max-width: 35px;
+}
+
+#logo-carro,#logo-user {
+    width: 80%;
+    padding-left:3px;
+}
+
+#logo-carro {
+    padding-top: 1px;
+}
+
+.nav-item-enlace{
+    width: 70%;
+    max-width: 35px;
+    height: 60%;
+    padding-top: 4px;
+}
+
+#presentacion {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-header {
+    width: 70%;
+}
+
+
