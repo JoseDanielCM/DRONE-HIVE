@@ -40,3 +40,14 @@ btnAdd.addEventListener("click",()=>{
         cantidad.textContent = valor_cantidad
     }
 })
+
+// BASURA
+const traerJson =  async function(){
+    const elemeJson = await fetch("./productos.json")
+    var datoss = await elemeJson.json()
+    console.log(datoss)
+
+}
+
+traerJson()
+

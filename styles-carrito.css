@@ -59,6 +59,11 @@ header > div > img{
     transition-duration: 0.5s;
     transition-delay: 0s;
 }
+
+    .bajarCarritoItems{
+        margin-top: 15vw;
+    }
+
 .back-trash{
     background-color: #0b0b0b;
     box-shadow: inset 20px 20px 50px  #070707;
@@ -92,13 +97,8 @@ header > div > img{
 
 }
 
-.carrito-article:hover{
-    bottom: 10vw;
-}
-
-    
-    #list-carrito-items:hover{
-        margin-top: 17vw;
+    .subirArticulo{
+        bottom: 10vw;
     }
 
     .Texto-productos{
