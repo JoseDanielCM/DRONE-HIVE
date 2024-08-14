@@ -40,7 +40,7 @@ btnAdd.addEventListener("click",()=>{
         cantidad.textContent = valor_cantidad
     }
 })
-
+/*
 // BASURA
 const traerJson =  async function(){
     const elemeJson = await fetch("./productos.json")
@@ -51,3 +51,4 @@ const traerJson =  async function(){
 
 traerJson()
 
+*/
