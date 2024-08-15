@@ -25,7 +25,6 @@ if (carrito.length == 0) {
         let imBasura = document.createElement("img")
         imBasura.src = "basura.png"
         imBasura.classList.add("basuraElem")
-
         let productoHtml = `
             <article class="carrito-article">
                 <img class="Imagenes-article" src="${localElemento.imagen}" alt="Imagen dron de Carrera" />
@@ -43,15 +42,52 @@ if (carrito.length == 0) {
             htmlCarritoItems.removeChild(divContenedor)
             let index = 0
             for (index; index < carrito.length; index++) {
-                if (carrito[index].nombre==localElemento.nombre) {
+                if (carrito[index].nombre == localElemento.nombre) {
+                    carrito.splice(index, 1)
+                    // sacar precio total
+                    document.getElementById("section-precio-compra").innerHTML=""
+                    let total = 0
+                    for (const product of carrito) {
+                        total += product.precio
+                    }
+
+                    total = formatPrice(total)
+                    let divTotalProductos = document.createElement("div")
+                    divTotalProductos.setAttribute("id", "section-item-total")
+                    divTotalProductos.innerHTML = `<h4>Total productos ( ${carrito.length} )</h4>`
+
+                    let divPrecio = document.createElement("div")
+                    divPrecio.setAttribute("id", "section-item-precio")
+                    divPrecio.innerHTML = `<h4>$${total}</h4>`
+
+                    document.getElementById("section-precio-compra").insertBefore(divPrecio, document.getElementById("section-item-compra"))
+
+                    document.getElementById("section-precio-compra").insertBefore(divTotalProductos, document.getElementById("section-item-precio"))
                     break
                 }
-                
             }
-            carrito.slice(index,1)
             localStorage.setItem('carrito', JSON.stringify(carrito))
         })
+
     }
+    // sacar precio total
+    let total = 0
+    for (const product of carrito) {
+        total += product.precio
+    }
+
+    total = formatPrice(total)
+    let divTotalProductos = document.createElement("div")
+    divTotalProductos.setAttribute("id", "section-item-total")
+    divTotalProductos.innerHTML = `<h4>Total productos ( ${carrito.length} )</h4>`
+
+    let divPrecio = document.createElement("div")
+    divPrecio.setAttribute("id", "section-item-precio")
+    divPrecio.innerHTML = `<h4>$${total}</h4>`
+
+    document.getElementById("section-precio-compra").insertBefore(divPrecio, document.getElementById("section-item-compra"))
+
+    document.getElementById("section-precio-compra").insertBefore(divTotalProductos, document.getElementById("section-item-precio"))
 }
 
 
