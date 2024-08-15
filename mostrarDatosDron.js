@@ -19,7 +19,7 @@ const traerJson = async function (parametro) {
 
     texto = `<div id="contenedor-datos">
 <div id="contenedor_imagen">
-    <img id="imagen-dron" src="../IMG-PRODUCTOS/dron-carrera-1.png" alt="dron-carrera-1" />
+    <img id="imagen-dron" src="IMG-PRODUCTOS/dron${Number(parametro)+1}.png" alt="dron-carrera-1" />
 </div>
 
 <section id="detalles-producto">

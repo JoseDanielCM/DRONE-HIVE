@@ -59,8 +59,7 @@ header > div > img{
     transition-property: margin-top;
     transition-duration: 0.5s;
     transition-delay: 0s;
-
-    overflow-x: scroll;
+    
 }
 
     .bajarCarritoItems{
@@ -100,7 +99,7 @@ header > div > img{
 
 }
 
-    .   {
+    .subirArticulo{
         bottom: 10vw;
     }
 
@@ -132,7 +131,6 @@ header > div > img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: 1fr 1fr;
-    overflow: scroll;
 }
 
 #section-item-total{
