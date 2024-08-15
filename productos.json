@@ -1,74 +1,82 @@
 [
     {
-        "nombre":"drone 4drc m1",
-        "categoria":"carrera",
-        "alcance":"1500m radiocontrol \n 800m wifi",
-        "tiempo":"130 minutos",
-        "velocidad":"160km/h",
-        "precio_anterior":1500000,
-        "precio":1300000
+        "nombre": "drone 4drc m1",
+        "categoria": "carrera",
+        "alcance": "1500m radiocontrol \n 800m wifi",
+        "tiempo": "130 minutos",
+        "velocidad": "160km/h",
+        "precio_anterior": 1500000,
+        "precio": 1300000,
+        "imagen": "IMG-PRODUCTOS/dron1.png"
     },
     {
-        "nombre":"drone e88 pro",
-        "categoria":"carrera",
-        "alcance":"800m radiocontrol \n 600m wifi",
-        "tiempo":"50 minutos",
-        "velocidad":"90km/h",
-        "precio_anterior":800000,
-        "precio":720000
+        "nombre": "drone e88 pro",
+        "categoria": "carrera",
+        "alcance": "800m radiocontrol \n 600m wifi",
+        "tiempo": "50 minutos",
+        "velocidad": "90km/h",
+        "precio_anterior": 800000,
+        "precio": 720000,
+        "imagen": "IMG-PRODUCTOS/dron2.png"
     },
     {
-        "nombre":"drone f11 4k",
-        "categoria":"camara",
-        "alcance":"1300m radiocontrol \n 700m wifi",
-        "tiempo":"45 minutos",
-        "velocidad":"60km/h",
-        "precio_anterior":1280000,
-        "precio":1200000
+        "nombre": "drone f11 4k",
+        "categoria": "camara",
+        "alcance": "1300m radiocontrol \n 700m wifi",
+        "tiempo": "45 minutos",
+        "velocidad": "60km/h",
+        "precio_anterior": 1280000,
+        "precio": 1200000,
+        "imagen": "IMG-PRODUCTOS/dron3.png"
     },
     {
-        "nombre":"drone tx9 3cam",
-        "categoria":"camara",
-        "alcance":"2000m radiocontrol \n 1000m wifi",
-        "tiempo":"60 minutos",
-        "velocidad":"80km/h",
-        "precio_anterior":1850000,
-        "precio":1750000
+        "nombre": "drone tx9 3cam",
+        "categoria": "camara",
+        "alcance": "2000m radiocontrol \n 1000m wifi",
+        "tiempo": "60 minutos",
+        "velocidad": "80km/h",
+        "precio_anterior": 1850000,
+        "precio": 1750000,
+        "imagen": "IMG-PRODUCTOS/dron4.png"
     },
     {
-        "nombre":"drone avialogic",
-        "categoria":"niños",
-        "alcance":"500m radiocontrol \n 200m wifi",
-        "tiempo":"25 minutos",
-        "velocidad":"30km/h",
-        "precio_anterior":460000,
-        "precio":400000
+        "nombre": "drone avialogic",
+        "categoria": "niños",
+        "alcance": "500m radiocontrol \n 200m wifi",
+        "tiempo": "25 minutos",
+        "velocidad": "30km/h",
+        "precio_anterior": 460000,
+        "precio": 400000,
+        "imagen": "IMG-PRODUCTOS/dron5.png"
     },
     {
-        "nombre":"drone dj kids",
-        "categoria":"niños",
-        "alcance":"400m radiocontrol \n 200m wifi",
-        "tiempo":"20 minutos",
-        "velocidad":"20km/h",
-        "precio_anterior":340000,
-        "precio":300000
+        "nombre": "drone dj kids",
+        "categoria": "niños",
+        "alcance": "400m radiocontrol \n 200m wifi",
+        "tiempo": "20 minutos",
+        "velocidad": "20km/h",
+        "precio_anterior": 340000,
+        "precio": 300000,
+        "imagen": "IMG-PRODUCTOS/dron6.png"
     },
     {
-        "nombre":"drone agras t10",
-        "categoria":"agricultura",
-        "alcance":"4000m radiocontrol \n 1500m wifi",
-        "tiempo":"110 minutos",
-        "velocidad":"100km/h",
-        "precio_anterior":3550000,
-        "precio":3400000
+        "nombre": "drone agras t10",
+        "categoria": "agricultura",
+        "alcance": "4000m radiocontrol \n 1500m wifi",
+        "tiempo": "110 minutos",
+        "velocidad": "100km/h",
+        "precio_anterior": 3550000,
+        "precio": 3400000,
+        "imagen": "IMG-PRODUCTOS/dron7.png"
     },
     {
-        "nombre":"drone agras t50",
-        "categoria":"agricultura",
-        "alcance":"4500m radiocontrol \n 1800m wifi",
-        "tiempo":"140 minutos",
-        "velocidad":"90km/h",
-        "precio_anterior":4990000,
-        "precio":4900000
+        "nombre": "drone agras t50",
+        "categoria": "agricultura",
+        "alcance": "4500m radiocontrol \n 1800m wifi",
+        "tiempo": "140 minutos",
+        "velocidad": "90km/h",
+        "precio_anterior": 4990000,
+        "precio": 4900000,
+        "imagen": "IMG-PRODUCTOS/dron8.png"
     }
 ]
