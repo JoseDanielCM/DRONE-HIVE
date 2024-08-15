@@ -11,15 +11,15 @@ const extraerParametro = function () {
 };
 
 const traerJson = async function (parametro) {
+    //subir info
     const elemeJson = await fetch("./productos.json");
     var datoss = await elemeJson.json();
 
     const dron = datoss[parametro];
-    console.log(dron);
 
     texto = `<div id="contenedor-datos">
 <div id="contenedor_imagen">
-    <img id="imagen-dron" src="IMG-PRODUCTOS/dron${Number(parametro)+1}.png" alt="dron-carrera-1" />
+    <img id="imagen-dron" src="IMG-PRODUCTOS/dron${Number(parametro) + 1}.png" alt="dron-carrera-1" />
 </div>
 
 <section id="detalles-producto">
@@ -30,7 +30,7 @@ const traerJson = async function (parametro) {
     <article id="cantidad">
         <div id="select-cantidad">
             <button id="quitar-cant" style="font-size: 8vw; line-height: 0px">-</button>
-            <span id="valor-cantidad">0</span>
+            <span id="valor-cantidad">1</span>
             <button style="font-weight: bold;" id="agregar-cant">+</button>
         </div>
     </article>
@@ -76,51 +76,79 @@ const traerJson = async function (parametro) {
 </div>`
 
     document.getElementById("section-imagen-fondo").innerHTML = texto
+    // estrellas
 
     const stars = document.querySelectorAll(".star")
+    for (const star of stars) {
+        star.addEventListener("click", () => {
 
-for (const star of stars) {
-    star.addEventListener("click",()=>{
-
-        valor_select = star.getAttribute("valor")
-        for (const star of stars) {
-            star.classList.remove("selected")
-        }
-        
-        for (const estrella of stars) {
-            if (estrella.getAttribute("valor") <= valor_select) {
-                estrella.classList.add("selected")
+            valor_select = star.getAttribute("valor")
+            for (const star of stars) {
+                star.classList.remove("selected")
             }
+
+            for (const estrella of stars) {
+                if (estrella.getAttribute("valor") <= valor_select) {
+                    estrella.classList.add("selected")
+                }
+            }
+
+        })
+
+    }
+
+    // CANTIDAD
+
+    const cantidad = document.getElementById("valor-cantidad")
+    const btnQuitar = document.getElementById("quitar-cant")
+    const btnAdd = document.getElementById("agregar-cant")
+
+    var valor_cantidad=0
+    btnQuitar.addEventListener("click", () => {
+        valor_cantidad = cantidad.textContent
+        if (valor_cantidad > 1) {
+            valor_cantidad--
+            cantidad.textContent = valor_cantidad
+        }
+    })
+
+    btnAdd.addEventListener("click", () => {
+        valor_cantidad = cantidad.textContent
+        if (valor_cantidad < 100) {
+            valor_cantidad++
+            cantidad.textContent = valor_cantidad
+        }
+    })
+
+    // LocalStorage
+    
+    const subirLocalStorage = function () {
+        const productoDronObject = {...dron}
+        productoDronObject.cantidad = valor_cantidad
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        let existe = false;
+
+        for (let i = 0; i < carrito.length; i++) {
+            if (carrito[i].nombre === dron.nombre) { 
+                carrito[i].cantidad += valor_cantidad
+                existe = true;
+                break; 
+            }
+        }   
+
+        if (!existe) {
+            carrito.push(productoDronObject);
         }
 
+        localStorage.setItem("carrito",JSON.stringify(carrito))
+    }
+
+    document.getElementById("carrito").addEventListener("click",()=>{
+        subirLocalStorage()
     })
-}
-
-// CANTIDAD
-
-const cantidad = document.getElementById("valor-cantidad")
-const btnQuitar = document.getElementById("quitar-cant")
-const btnAdd = document.getElementById("agregar-cant")
-
-btnQuitar.addEventListener("click",()=>{
-    valor_cantidad = cantidad.textContent
-    if (valor_cantidad>0) {
-        valor_cantidad--
-        cantidad.textContent = valor_cantidad
-    }
-})
-
-btnAdd.addEventListener("click",()=>{
-    valor_cantidad = cantidad.textContent
-    if (valor_cantidad<100) {
-        valor_cantidad++
-        cantidad.textContent = valor_cantidad
-    }
-})
 };
 
 let parametro = extraerParametro();
 traerJson(parametro);
-//************************************************************************* */
-// ESTRELLAS 
 
