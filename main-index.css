@@ -59,7 +59,7 @@ main{
     width: 100%;
 }
 
-section[id="clasificacion-category"] > a {
+section[id="clasificacion-category"] > button {
     text-decoration: none;
     color: white;
 }

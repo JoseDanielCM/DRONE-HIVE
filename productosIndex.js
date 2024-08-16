@@ -11,7 +11,6 @@ const obtenerJson = async function () {
             let subtitle = document.createElement("h2")
             subtitle.classList.add("subtitulos")
             subtitle.innerHTML = categorias[index / 2]
-            console.log(subtitle)
             contenedorProductos.appendChild(subtitle)
         }
         let degradado = ""
@@ -33,9 +32,6 @@ const obtenerJson = async function () {
                 </a>
             `
 
-            console.log(articuloContenedor);
-
-
         } else {
             degradado = "Degradado-productos-derecha"
             articuloContenedor.classList.add("productos")
@@ -51,7 +47,6 @@ const obtenerJson = async function () {
                     </div>
                 </a>
             `
-            console.log(articuloContenedor);
         }
 
         contenedorProductos.appendChild(articuloContenedor)
@@ -61,3 +56,25 @@ const obtenerJson = async function () {
 }
 
 obtenerJson()
+
+const filtro = async function () {
+    const elemeJson = await fetch("./productos.json");
+    var datoss = await elemeJson.json();
+
+    let categorias_escogidas = []
+    const botonesCategorias = document.getElementsByClassName("escogerCategoria")
+    for (const boton of botonesCategorias) {
+        boton.addEventListener("click",()=>{
+            let valor  = boton.getAttribute("valor")
+            if (!categorias_escogidas.includes(valor)) {
+                categorias_escogidas.push(valor)
+            }else{
+                categorias_escogidas.splice(categorias_escogidas.indexOf(valor),1)
+            }
+            console.log(categorias_escogidas)
+        })
+    }
+
+}
+
+filtro()
