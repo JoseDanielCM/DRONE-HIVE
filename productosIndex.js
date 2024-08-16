@@ -72,8 +72,32 @@ const filtro = async function () {
                 categorias_escogidas.splice(categorias_escogidas.indexOf(valor),1)
             }
             console.log(categorias_escogidas)
+
+
+            // HTML AGREGAR
+            contenedorProductos.innerHTML =""
+
+            for (const categoria of categorias_escogidas) {
+                let subtitle = document.createElement("h2")
+                subtitle.classList.add("subtitulos")
+                subtitle.innerHTML = categoria.toUpperCase()
+                contenedorProductos.appendChild(subtitle)
+
+                datoss.forEach((element, index) => {
+                    if ( datoss) {
+                        
+                    }
+                })
+            }
+
+
+
+
         })
     }
+
+
+    
 
 }
 

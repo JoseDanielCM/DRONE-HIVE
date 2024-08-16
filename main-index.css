@@ -30,6 +30,10 @@ main{
     font-size: 7vw;
 }
 
+#clasificacion{
+    margin-bottom: 5vw;
+}
+
 #clasificacion-category {
     margin: 10px 7.5vw 10px;
     width: 85vw;
@@ -126,6 +130,7 @@ section > article > a {
 
 
 footer {
+    margin-top: 5vw;
     grid-row: 3;
 
 }
