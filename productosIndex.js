@@ -1,5 +1,4 @@
 const contenedorProductos = document.getElementById("conjunto-productos")
-contenedorProductos.style.borderWidth="2px"
 const obtenerJson = async function () {
     const elemeJson = await fetch("./productos.json");
     var datoss = await elemeJson.json();
@@ -70,13 +69,14 @@ const filtro = async function () {
     
     for (const boton of botonesCategorias) {
         boton.addEventListener("click", () => {
-            boton.style.borderColor="red"
-            
             let valor = boton.getAttribute("valor")
             if (!categorias_escogidas.includes(valor)) {
+                boton.style.borderColor="#a565cf"
                 categorias_escogidas.push(valor)
             } else {
                 categorias_escogidas.splice(categorias_escogidas.indexOf(valor), 1)
+                boton.style.borderColor="#5b5fc9"
+
             }
             console.log(categorias_escogidas)
 

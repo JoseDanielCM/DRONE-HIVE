@@ -7,9 +7,10 @@
 }
 
 button{
-    border-color: purple;
-    border-width: 10px;
+    border-color: #5b5fc9;
+    border-width: 5px;
     box-shadow: none;
+    border-style: solid;
 }
 
     #presentacion p{
