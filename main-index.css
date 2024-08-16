@@ -65,12 +65,6 @@ section[id="clasificacion-category"] > a {
 }
 
 /* ------------------------------PRODUCTOS-------------------------------- */
-
-main > article > a {
-    text-decoration: none;
-    color: inherit;
-}
-
 section > article > a {
     text-decoration: none;
     color: inherit;
