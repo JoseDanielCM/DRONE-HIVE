@@ -6,6 +6,12 @@
     align-items: center;   
 }
 
+button{
+    border-color: purple;
+    border-width: 10px;
+    box-shadow: none;
+}
+
     #presentacion p{
         font-size: 4.3vw;
     }
