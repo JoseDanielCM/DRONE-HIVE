@@ -3,7 +3,7 @@ function formatPrice(price) {
     let [integerPart, decimalPart] = price.toString().split('.');
 
     // Insertar comillas cada 3 dígitos en la parte entera, de derecha a izquierda
-    let formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    let formattedInteger ="$ "+ integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
     // Unir la parte entera con la parte decimal si existe
     return decimalPart ? `${formattedInteger}.${decimalPart}` : formattedInteger;
@@ -19,6 +19,7 @@ if (carrito.length == 0) {
 } else {
     for (const localElemento of carrito) {
         let valor = localElemento.precio*localElemento.cantidad
+        let valorSinCaracteresEspeciales = valor
         valor = formatPrice(valor)
         let divContenedor = document.createElement("div")
         divContenedor.classList.add("back-trash")
@@ -57,7 +58,7 @@ if (carrito.length == 0) {
                 <img class="Imagenes-article" src="${localElemento.imagen}" alt="Imagen dron de Carrera" />
                 <div class="Texto-productos">
                     <span class="texto-nav-links">${localElemento.nombre}</span>
-                    <span id="${contador}">$ ${valor}</span>
+                    <span value="${valorSinCaracteresEspeciales}" class="subtotal" id="${contador}">${valor}</span>
                 </div>
             
             `
@@ -80,9 +81,13 @@ if (carrito.length == 0) {
                     carrito.splice(index, 1)
                     // sacar precio total otravez
                     document.getElementById("section-precio-compra").innerHTML = ""
+                    const listaPrecios = document.getElementsByClassName("subtotal")
                     let total = 0
-                    for (const product of carrito) {
-                        total += product.precio
+                    for (const product of listaPrecios) {
+                        console.log(product.getAttribute("value"));
+                        
+                        total += Number(product.getAttribute("value"))
+                        console.log("total = "+total)
                     }
 
                     total = formatPrice(total)
@@ -102,19 +107,30 @@ if (carrito.length == 0) {
             }
             localStorage.setItem('carrito', JSON.stringify(carrito))
         })
-        console.log(cantidad.innerHTML)
         let valor_cantidad = cantidad.innerText
-        console.log(valor_cantidad) 
         botonQuitar.addEventListener("click", () => {
-            console.log("xd")
             if (valor_cantidad > 1) {
                 valor_cantidad--
                 cantidad.textContent = valor_cantidad
                 subirLocalStorage(localElemento,valor_cantidad)
-                valor = localElemento.precio*valor_cantidad
-                valor = formatPrice(valor)
                 cambiar = botonQuitar.value
+                valor = localElemento.precio*valor_cantidad
+                document.getElementById(cambiar).setAttribute("value",valor)
+                valor = formatPrice(valor)
                 document.getElementById(cambiar).innerText=valor
+
+                // CAMBIAR VALOR DE PRECIO TOTAL
+                const listaPrecios = document.getElementsByClassName("subtotal")
+                let total = 0
+                for (const product of listaPrecios) {
+                    console.log(product.getAttribute("value"));
+                    
+                    total += Number(product.getAttribute("value"))
+                    console.log("total = "+total)
+                }
+                total = formatPrice(total)
+
+                document.querySelector("#section-item-precio h4").innerHTML = total
             }
         })
 
@@ -123,10 +139,24 @@ if (carrito.length == 0) {
                 valor_cantidad++
                 cantidad.textContent = valor_cantidad
                 subirLocalStorage(localElemento,valor_cantidad)
-                valor = localElemento.precio*valor_cantidad
-                valor = formatPrice(valor)
                 cambiar = botonAdd.value
+                valor = localElemento.precio*valor_cantidad
+                document.getElementById(cambiar).setAttribute("value",valor)
+                valor = formatPrice(valor)
                 document.getElementById(cambiar).innerText=valor
+
+                // CAMBIAR VALOR DE PRECIO TOTAL
+                const listaPrecios = document.getElementsByClassName("subtotal")
+                let total = 0
+                for (const product of listaPrecios) {
+                    console.log(product.getAttribute("value"));
+                    
+                    total += Number(product.getAttribute("value"))
+                    console.log("total = "+total)
+                }
+                total = formatPrice(total)
+
+                document.querySelector("#section-item-precio h4").innerHTML = total
             }
 
         })
@@ -134,11 +164,12 @@ if (carrito.length == 0) {
 
     }
     // sacar precio total
+    const listaPrecios = document.getElementsByClassName("subtotal")
     let total = 0
-    for (const product of carrito) {
-        total += product.precio
+    for (const product of listaPrecios) {
+        
+        total += Number(product.getAttribute("value"))
     }
-
     total = formatPrice(total)
     let divTotalProductos = document.createElement("div")
     divTotalProductos.setAttribute("id", "section-item-total")
@@ -146,7 +177,7 @@ if (carrito.length == 0) {
 
     let divPrecio = document.createElement("div")
     divPrecio.setAttribute("id", "section-item-precio")
-    divPrecio.innerHTML = `<h4>$${total}</h4>`
+    divPrecio.innerHTML = `<h4>${total}</h4>`
 
     document.getElementById("section-precio-compra").insertBefore(divPrecio, document.getElementById("section-item-compra"))
 
