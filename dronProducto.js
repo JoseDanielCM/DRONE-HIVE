@@ -103,7 +103,7 @@ const traerJson = async function (parametro) {
     const btnQuitar = document.getElementById("quitar-cant")
     const btnAdd = document.getElementById("agregar-cant")
 
-    var valor_cantidad=0
+    var valor_cantidad=1
     btnQuitar.addEventListener("click", () => {
         valor_cantidad = cantidad.textContent
         if (valor_cantidad > 1) {

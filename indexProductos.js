@@ -1,3 +1,14 @@
+function formatPrice(price) {
+    // Convertir el número a cadena y dividir en partes
+    let [integerPart, decimalPart] = price.toString().split('.');
+
+    // Insertar comillas cada 3 dígitos en la parte entera, de derecha a izquierda
+    let formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    // Unir la parte entera con la parte decimal si existe
+    return decimalPart ? `${formattedInteger}.${decimalPart}` : formattedInteger;
+}
+
 const contenedorProductos = document.getElementById("conjunto-productos")
 const obtenerJson = async function () {
     const elemeJson = await fetch("./productos.json");
@@ -19,6 +30,8 @@ const obtenerJson = async function () {
         if (producto>4) {
             producto=4
         }
+        precio_anterior=formatPrice(element.precio_anterior)
+        precio=formatPrice(element.precio)
         if (index % 2 == 0) {
             degradado = "Degradado-productos-izquierda"
             articuloContenedor.classList.add("productos")
@@ -29,7 +42,7 @@ const obtenerJson = async function () {
                         <img class="imagenes-productos" src="${element.imagen}" alt="" />
                         <div>
                             <h3 class="nombre-producto">${element.nombre}</h3>
-                            <pre class="precios-productos"><del>${element.precio_anterior}</del>  ${element.precio}</pre>
+                            <pre class="precios-productos"><del>${precio_anterior}</del>  ${precio}</pre>
                         </div>
                     </div>
                 </a>
@@ -44,7 +57,7 @@ const obtenerJson = async function () {
                     <div class="${degradado}">
                         <div>
                             <h3 class="nombre-producto">${element.nombre}</h3>
-                            <pre class="precios-productos"><del>${element.precio_anterior}</del>  ${element.precio}</pre>
+                            <pre class="precios-productos"><del>${precio_anterior}</del>  ${precio_anterior}</pre>
                         </div>
                         <img class="imagenes-productos" src="${element.imagen}" alt="" />
                     </div>
