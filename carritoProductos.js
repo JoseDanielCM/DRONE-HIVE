@@ -13,12 +13,13 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 const htmlCarritoItems = document.getElementById("list-carrito-items")
 const ListaImagenesBasura = document.getElementsByClassName("basuraElem")
-
+let contador = 0
 if (carrito.length == 0) {
     htmlCarritoItems.innerHTML = "El carrito está vacio"
 } else {
     for (const localElemento of carrito) {
-        valor = formatPrice(localElemento.precio)
+        let valor = localElemento.precio*localElemento.cantidad
+        valor = formatPrice(valor)
         let divContenedor = document.createElement("div")
         divContenedor.classList.add("back-trash")
 
@@ -33,17 +34,20 @@ if (carrito.length == 0) {
         botonQuitar.classList.add("quitar-cant")
         botonQuitar.style.fontSize = '8vw';
         botonQuitar.style.lineHeight = '0px';
+        botonQuitar.type = "button"
         botonQuitar.innerHTML = "-"
+        botonQuitar.setAttribute("value",`${contador}`)
 
         let cantidad = document.createElement("span")
         cantidad.classList.add("valor-cantidad")
         cantidad.innerHTML = localElemento.cantidad
 
-
         let botonAdd = document.createElement("button")
-        botonQuitar.classList.add("agregar-cant")
-        botonQuitar.style.fontWeight = 'bold';
-        botonQuitar.innerHTML = "+"
+        botonAdd.classList.add("agregar-cant")
+        botonAdd.style.fontWeight = 'bold';
+        botonAdd.innerHTML = "+"
+        botonAdd.type = "button"
+        botonAdd.setAttribute("value",`${contador}`)
 
         let articuloCarrito = document.createElement("article")
         articuloCarrito.classList.add("carrito-article")
@@ -53,17 +57,16 @@ if (carrito.length == 0) {
                 <img class="Imagenes-article" src="${localElemento.imagen}" alt="Imagen dron de Carrera" />
                 <div class="Texto-productos">
                     <span class="texto-nav-links">${localElemento.nombre}</span>
-                    <span>$ ${valor}</span>
-                </div>
-                <div class="select-cantidad">
-                    <button id="quitar-cant" style="font-size: 8vw; line-height: 0px">-</button>
-                    <span id="valor-cantidad">${localElemento.cantidad}</span>
-                    <button style="font-weight: bold;" id="agregar-cant">+</button>
+                    <span id="${contador}">$ ${valor}</span>
                 </div>
             
             `
-        console.log(articuloCarrito)
+        seleccionarCantidad.append(botonQuitar)
+        seleccionarCantidad.append(cantidad)
+        seleccionarCantidad.append(botonAdd)
+
         articuloCarrito.innerHTML = productoHtml
+        articuloCarrito.appendChild(seleccionarCantidad)
         divContenedor.appendChild(articuloCarrito)
         divContenedor.appendChild(imBasura)
         htmlCarritoItems.appendChild(divContenedor)
@@ -75,7 +78,7 @@ if (carrito.length == 0) {
             for (index; index < carrito.length; index++) {
                 if (carrito[index].nombre == localElemento.nombre) {
                     carrito.splice(index, 1)
-                    // sacar precio total
+                    // sacar precio total otravez
                     document.getElementById("section-precio-compra").innerHTML = ""
                     let total = 0
                     for (const product of carrito) {
@@ -99,26 +102,35 @@ if (carrito.length == 0) {
             }
             localStorage.setItem('carrito', JSON.stringify(carrito))
         })
-
-    
-        var valor_cantidad = cantidad.innerText
-        console.log(valor_cantidad)
-        btnQuitar.addEventListener("click", () => {
-            valor_cantidad = cantidad.textContent
+        console.log(cantidad.innerHTML)
+        let valor_cantidad = cantidad.innerText
+        console.log(valor_cantidad) 
+        botonQuitar.addEventListener("click", () => {
+            console.log("xd")
             if (valor_cantidad > 1) {
                 valor_cantidad--
                 cantidad.textContent = valor_cantidad
+                subirLocalStorage(localElemento,valor_cantidad)
+                valor = localElemento.precio*valor_cantidad
+                valor = formatPrice(valor)
+                cambiar = botonQuitar.value
+                document.getElementById(cambiar).innerText=valor
             }
-            subirLocalStorage()
         })
 
-        btnAdd.addEventListener("click", () => {
-            valor_cantidad = cantidad.textContent
+        botonAdd.addEventListener("click", () => {
             if (valor_cantidad < 100) {
                 valor_cantidad++
                 cantidad.textContent = valor_cantidad
+                subirLocalStorage(localElemento,valor_cantidad)
+                valor = localElemento.precio*valor_cantidad
+                valor = formatPrice(valor)
+                cambiar = botonAdd.value
+                document.getElementById(cambiar).innerText=valor
             }
+
         })
+        contador++
 
     }
     // sacar precio total
@@ -163,26 +175,14 @@ containerElementos.addEventListener("click", () => {
 
 })
 
-
-
-const subirLocalStorage = function () {
-    const productoDronObject = {...dron}
-    productoDronObject.cantidad = valor_cantidad
+const subirLocalStorage = function (localElemento,valor_cantidad) {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-    let existe = false;
-
-    for (let i = 0; i < carrito.length; i++) {
-        if (carrito[i].nombre === dron.nombre) { 
-            carrito[i].cantidad += valor_cantidad
-            existe = true;
-            break; 
+    carrito.forEach((element,index) => {
+        if (element.nombre==localElemento.nombre) {
+            element.cantidad = valor_cantidad
         }
-    }   
-
-    if (!existe) {
-        carrito.push(productoDronObject);
-    }
-
+    });
     localStorage.setItem("carrito",JSON.stringify(carrito))
+
 }
