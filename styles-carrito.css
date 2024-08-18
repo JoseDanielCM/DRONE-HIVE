@@ -110,7 +110,8 @@ main{
         position: absolute;
         top: 0;
         right: 0;
-        width: 25%;
+        width: 30%;
+        height: 12%;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
@@ -125,7 +126,7 @@ main{
     }
 
     .quitar-cant{
-        font-size: min(8vw,40px); line-height: 0px;
+        font-size: min(7vw,40px); line-height: 0px;
         background-color: rgba(0, 0, 255, 0.332);
         border: none;
         width: 30%;
@@ -141,6 +142,8 @@ main{
     }
     .valor-cantidad{
         font-size: 2vw;
+        display: flex;
+        align-items: center;
     }
 
 
