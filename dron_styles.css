@@ -213,8 +213,7 @@ img {
         }
 
         #detalles-producto{
-            margin-top: 10vh;
-            max-height: 90vh;
+            margin-top: calc(10vh + 55px);
             background-color: #2f2238ed;
             border-radius: 20px 20px 0 0;
         
