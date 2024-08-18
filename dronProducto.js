@@ -63,10 +63,10 @@ const traerJson = async function (parametro) {
     </article>
 
     <article id="carrito">
-        <a href="../carrito.html">
+        <a href="carrito.html">
             <div id="carrito-boton">
                 <div id="carrito-boton-imagen">
-                    <img src="../IMAGENES-NAV/CARRITO.png" alt="Icono agregar carrito" />
+                    <img src="IMAGENES-NAV/CARRITO.png" alt="Icono agregar carrito" />
                 </div>
                 <div id="carrito-boton-texto">Agregar al carrito</div>
             </div>
