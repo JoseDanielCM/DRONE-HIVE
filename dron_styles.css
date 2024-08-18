@@ -21,6 +21,8 @@ body {
     overflow: auto;
 }
 
+
+
 img {
     width: 20px;
 }
@@ -191,4 +193,208 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    #quitar-cant{
+        font-size: 8vw; line-height: 0px
+    }
+
+    #agregar-cant{
+        font-weight: bold;
+    }
+    @media (min-aspect-ratio: 4/3) {
+        #contenedor-datos {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-rows: 1fr;
+            position: relative;
+            max-height: 100vh;
+            max-width: 100%;
+        }
+
+        #detalles-producto{
+            margin-top: 10vh;
+            max-height: 90vh;
+            background-color: #2f2238ed;
+            border-radius: 20px 20px 0 0;
+        
+            display: grid;
+            grid-template-areas: "nombre nombre cantidad"
+                                "estrellas estrellas categoria"
+                                "descripcion descripcion descripcion"
+                                "precio carrito carrito"; 
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: min-content min-content auto auto;
+        }
+        
+        
+
+        #nombre {
+            text-align: center;
+            grid-area: nombre;
+            font-size: 2vw;
+        }
+        
+            #nombre * {
+                margin: 2vh;
+            }
+        #cantidad{
+            grid-area: cantidad;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #select-cantidad{
+            height: 50%;
+        }
+
+        #select-cantidad > span {
+            font-size: 2vw;
+        }
+        #quitar-cant{
+            font-size: 5vw; line-height: 0px;
+            padding-bottom: 0.8vw;
+        }
+
+        #agregar-cant{
+            font-weight: bold;
+            font-size: 2.5vw;
+        }
+        
+            #select-cantidad {
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    width: 20vw;
+                    text-align: center;
+                    font-size: 5vw;
+                    font-weight: bold;
+                    color: black;
+                    border-radius: 8px;
+                    border: 2px solid black;
+                    background-color: white;
+                    margin: 0 20px;
+                    
+            }
+        
+            #quitar-cant{
+                background-color: rgba(0, 0, 255, 0.332);
+                border: none;
+                width: 30%;
+            }
+        
+            #agregar-cant{
+                background-color: rgba(0, 0, 255, 0.269);
+                border: none;
+                width: 30%;
+            }
+        
+        
+        #estrellas {
+            grid-area: estrellas;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+        }
+        
+            .star {
+                background-color: transparent;
+                border: none;
+                font-size: 7vw;
+                line-height: 2vw;
+                cursor: pointer;
+            }   
+        
+            .selected {
+                color: gold;
+            }
+        
+        #categoria{
+            grid-area: categoria;
+        }
+        
+            #categoria * * {
+                margin-bottom: 0;
+                text-align: center;
+                margin-top: 0;
+                font-size: 3vw;
+            }
+        
+        
+        #descripcion{
+            grid-area: descripcion;
+            padding-top: 1vh;
+            font-size: 3vw;
+        }
+        
+            #descripcion > * {
+                margin: 4px auto;
+                text-align: center;
+            }
+        
+            #TXT-DESCRIPCION {
+                font-size: 4vw;
+            }
+        
+        #precio{
+            grid-area: precio;
+            font-size: 3vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+            #precio *{
+                text-align: right;
+                margin: 0;
+            }
+        
+            #precio h5{
+                color: #978497;
+            }
+        
+            #precio p {
+                font-weight: bold;
+                font-size: 6.5vw;
+            }
+        #carrito{
+            grid-area: carrito;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+            #carrito *{
+                text-decoration: none;
+                width: 80%;
+                color: inherit;
+                display: flex;
+                align-items: center;
+            }
+        
+            #carrito-boton{
+                width: 55vw;
+                height: 9vw;
+                display: grid;
+                grid-template-columns: 12vw 1fr;
+                grid-template-rows: 10vw;
+                background-color: black;
+                border-radius: 20px;
+            }
+        
+            #carrito-boton-imagen{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+                #carrito-boton-imagen img{
+                    width: 50%;
+                }
+            #carrito-boton-texto{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
     }

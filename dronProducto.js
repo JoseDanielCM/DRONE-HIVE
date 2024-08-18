@@ -29,9 +29,9 @@ const traerJson = async function (parametro) {
 
     <article id="cantidad">
         <div id="select-cantidad">
-            <button id="quitar-cant" style="font-size: 8vw; line-height: 0px">-</button>
+            <button id="quitar-cant">-</button>
             <span id="valor-cantidad">1</span>
-            <button style="font-weight: bold;" id="agregar-cant">+</button>
+            <button id="agregar-cant">+</button>
         </div>
     </article>
 

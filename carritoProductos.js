@@ -33,8 +33,7 @@ if (carrito.length == 0) {
 
         let botonQuitar = document.createElement("button")
         botonQuitar.classList.add("quitar-cant")
-        botonQuitar.style.fontSize = '8vw';
-        botonQuitar.style.lineHeight = '0px';
+
         botonQuitar.type = "button"
         botonQuitar.innerHTML = "-"
         botonQuitar.setAttribute("value",`${contador}`)
@@ -45,7 +44,6 @@ if (carrito.length == 0) {
 
         let botonAdd = document.createElement("button")
         botonAdd.classList.add("agregar-cant")
-        botonAdd.style.fontWeight = 'bold';
         botonAdd.innerHTML = "+"
         botonAdd.type = "button"
         botonAdd.setAttribute("value",`${contador}`)
@@ -97,7 +95,7 @@ if (carrito.length == 0) {
 
                     let divPrecio = document.createElement("div")
                     divPrecio.setAttribute("id", "section-item-precio")
-                    divPrecio.innerHTML = `<h4>$${total}</h4>`
+                    divPrecio.innerHTML = `<h4>${total}</h4>`
 
                     document.getElementById("section-precio-compra").insertBefore(divPrecio, document.getElementById("section-item-compra"))
 

@@ -1,9 +1,13 @@
+
+
 #presentacion {
     grid-row: 1;
-    margin-top: calc(10vw); 
+    padding-top: 60px; 
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 button{
@@ -12,14 +16,23 @@ button{
     box-shadow: none;
     border-style: solid;
 }
-
+    #presentacion h1{
+        margin: 0; 
+        margin-top: 5px; 
+        font-size: min(10vw,60px);
+        
+        text-align: center
+    }
     #presentacion p{
-        font-size: 4.3vw;
+        font-size: min(4.3vw,30px);
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 80%;
     }
 
     #presentacion img{
         margin-top: 20px;    
-
+        max-width: 450px;
     }
 
 #logo-header {
@@ -27,23 +40,30 @@ button{
 }
 
 main{
-    margin-top: 10vw;
+    margin-top: 5vw;
     grid-row: 2;
 }
 
 /****************** CATEGORIAS ***********************/
 .subtitulos {
     text-align: center;
-    font-size: 7vw;
+    font-size: min(7vw,40px);
+    box-sizing: border-box;
+    margin-bottom: 40px;
 }
 
 #clasificacion{
     margin-bottom: 5vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #clasificacion-category {
-    margin: 10px 7.5vw 10px;
-    width: 85vw;
+    width: 85%;
+    max-width: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -51,19 +71,21 @@ main{
     text-decoration: none;
 
 }
+
 .category-article {
+    box-sizing: border-box;
     border: 4px solid #433d66;
     background-color: #252043;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 16px;
+    height: 100%;
 }
 
 .texto-nav-links {
     margin: 10px 0 2px;
-    font-size: 4.3vw;
+    font-size: min(4.3vw,25px);
 }
 
 .Imagenes-categorias {
@@ -72,6 +94,7 @@ main{
 
 section[id="clasificacion-category"] > button {
     text-decoration: none;
+    max-width: 242.5px;
     color: white;
 }
 
@@ -109,22 +132,34 @@ section > article > a {
 .Degradado-productos-izquierda{
     background: linear-gradient(to left, #141414,transparent 80%);
     display: grid;
-    grid-template-columns: 50vw 1fr;
+    grid-template-columns: 50% 1fr;
 }
 
 .Degradado-productos-derecha{
     background: linear-gradient(to right, #141414,transparent 80%);
     display: grid;
-    grid-template-columns: 1fr 50vw;
+    grid-template-columns: 1fr 50%;
 }
 
+.Degradado-productos-izquierda > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Degradado-productos-derecha > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .imagenes-productos {
-    width: 45vw;
+    width: 45%;
+    max-width: 200px;
     margin: 20px auto;
 }
 
 .nombre-producto {
-    margin: 45px 0 10px;
     font-size: 5vw;
 }
 

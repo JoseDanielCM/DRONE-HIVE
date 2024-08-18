@@ -3,56 +3,35 @@ header{
     grid-template-columns: 72vw 1fr;
     grid-template-rows: 1fr;
     margin-top: 10vw;
-    width: 100vw;
+    width: 100%;
 }
 
 header > h1 {
     margin-top: 7vh;
     grid-column: 1;
     margin-left: 7.5vw;
-    font-size: 7vw;
+    font-size: min(7vw,100px);
     margin-bottom: 0;
 }
 
-header > div > img{
-    width: 7vw;
-    position: relative;
-    bottom: 3vw;
-    left: 3.5vw;
-}
 
-#header-icono-carrito{
-    background-color: white;
-    width:14vw;
-    height: 14vw;
-    border: 0px solid transparent;
-    border-radius: 50%;
-    grid-column: 2;
-    margin: auto;
-    margin-top: 6vh;
-}
-
-#header-icono-carrito-cantidad{
-    background-color: black;
-    border-radius: 50%;
-    width: 7vw;
-    height: 7vw;
-    position: relative;
-    bottom: 3vw;
-    left: 8.5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 /* CARRITO LISTA */
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;    
+}
+
 #list-carrito-items {
-    margin: 30px 7.5vw 10px;
+    margin-top: 5vw;
     max-width: 85vw;
     display: flex;
+    justify-content: center;
     gap: 15px;
-    row-gap: 13vw;
+    row-gap: min(13vw,100px);
     text-decoration: none;
     transition-property: margin-top;
     transition-duration: 0.5s;
@@ -61,7 +40,8 @@ header > div > img{
 }
 
     .bajarCarritoItems{
-        margin-top: 15vw;
+        margin-top: min(15vw, 10px);
+        
     }
 
 .back-trash{
@@ -86,21 +66,28 @@ header > div > img{
     display: flex;
     flex-direction: column;
     font-size: 16px;
-    height: 100%;
     width:calc((85vw - 15px) / 2);
+    height: 100%;
+    max-width: 300px;
     background-image: url(FONDO-CARRITO.jpg);
     background-size: cover;
     text-align: center;
+
     transition-property: bottom;
     transition: cubic-bezier(.39,.29,.39,1);
     transition-duration: 1s;
     transition-delay: 0.1s;
     bottom: 0;
 
-}
+    aspect-ratio: 1 / 0.6;
 
+}
+.Imagenes-article {
+    width: 100%;
+    height: 100%;
+}
     .subirArticulo{
-        bottom: 10vw;
+        bottom: min(10vw,30%);
     }
 
     .Texto-productos{
@@ -138,26 +125,30 @@ header > div > img{
     }
 
     .quitar-cant{
+        font-size: min(8vw,40px); line-height: 0px;
         background-color: rgba(0, 0, 255, 0.332);
         border: none;
         width: 30%;
-    }
 
+
+    }
     .agregar-cant{
+        font-size: 2vw;
         background-color: rgba(0, 0, 255, 0.269);
         border: none;
+        font-weight: bold;
         width: 30%;
     }
+    .valor-cantidad{
+        font-size: 2vw;
+    }
 
-.Imagenes-article {
-    width: 100%;
-    height: 100%;
-}
+
 
 /* SECTION TOTAL COMPRA */
 
 #section-precio-compra{
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row: 1fr 1fr;
